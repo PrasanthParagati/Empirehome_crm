@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import com.base.Basetest;
+import com.utils.Utils;
 
 public class MoveStockFunctionality extends Basetest {
 
@@ -61,27 +62,23 @@ public class MoveStockFunctionality extends Basetest {
 		movestock.click();
 		
 		Thread.sleep(2000);
-
-		Select s1 = new Select(movefrom);
-		s1.selectByVisibleText("Warehouse");
-
-		Select s2 = new Select(moveto);
-		s2.selectByVisibleText("Showroom");
-
+		
+		
+		Utils.dropdowns(movefrom, "Warehouse");
+		Utils.dropdowns(moveto, "Showroom");
+		
 		notes.sendKeys(prop.getProperty("Notes"));
 		
 		Thread.sleep(2000);
 		
-		Actions ac = new Actions(driver);
-		ac.moveToElement(selectmnumber).click().perform();
+		Utils.actions(driver, selectmnumber);
+		
 		textbox.sendKeys(prop.getProperty("TestBox"));
 		textbox.sendKeys(Keys.ENTER);
 		
-		Robot rb = new Robot();
 		movingqty.sendKeys(prop.getProperty("MovingQty"));
+		movingqty.sendKeys(Keys.ENTER);
 
-		rb.keyPress(KeyEvent.VK_ENTER);
-		rb.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(2000);
 		addbutton.click();
 		Thread.sleep(2000);
@@ -89,22 +86,24 @@ public class MoveStockFunctionality extends Basetest {
 
 		driver.navigate().to("http://empirehome.myprojectsonline.co.in/Inventory/MoveStock");
 		Thread.sleep(2000);
-        s1.selectByVisibleText("Showroom");
-        s2.selectByVisibleText("Warehouse");              
+		
+		Utils.dropdowns(movefrom, "Showroom");
+		Utils.dropdowns(moveto, "Warehouse");
+		
         notes.sendKeys(prop.getProperty("Notes1"));
 		
 		Thread.sleep(2000);
 		
-		ac.moveToElement(selectmnumber).click().perform();
+		Utils.actions(driver, selectmnumber);
+		
 		textbox.sendKeys(prop.getProperty("TextBox1"));
 		textbox.sendKeys(Keys.ENTER);
 		
 		Thread.sleep(2000);
 		
 		movingqty.sendKeys(prop.getProperty("MovingQty12"));
+		movingqty.sendKeys(Keys.ENTER);
 
-		rb.keyPress(KeyEvent.VK_ENTER);
-		rb.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(2000);
 		addbutton.click();
 		Thread.sleep(2000);

@@ -23,7 +23,7 @@ public class LogintestWithMultipleData extends Basetest {
 	@DataProvider
 
 	public String[][] dataload() throws Throwable {
-		return DataSource.Customerdata(sheetname);
+		return Utils.Customerdata(sheetname);
 	}
 
 	@BeforeMethod

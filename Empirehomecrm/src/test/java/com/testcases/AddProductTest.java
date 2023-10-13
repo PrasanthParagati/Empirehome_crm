@@ -9,13 +9,13 @@ import org.testng.annotations.Test;
 import com.base.Basetest;
 import com.pageobjects.AddProductToInventory;
 import com.pageobjects.Loginfunctionality;
-import com.utils.DatasourceOfAddProduct;
+import com.utils.Utils;
 
 public class AddProductTest extends Basetest {
 	
 	Loginfunctionality lf;
 	AddProductToInventory product;
-	private final String sheetname = "login";
+	private final String sheetname = "addproduct";
 	
 	public AddProductTest() {
 		super();
@@ -23,7 +23,7 @@ public class AddProductTest extends Basetest {
 	
 	@DataProvider
 	public String[][] dataload() throws Throwable{
-		return DatasourceOfAddProduct.Customerdata(sheetname);
+		return Utils.Customerdata(sheetname);
 	}
 	
 	@BeforeMethod

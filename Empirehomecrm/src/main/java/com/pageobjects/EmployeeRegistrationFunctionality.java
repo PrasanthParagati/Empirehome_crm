@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.base.Basetest;
+import com.utils.Utils;
 
 public class EmployeeRegistrationFunctionality extends Basetest {
 
@@ -46,11 +47,15 @@ public class EmployeeRegistrationFunctionality extends Basetest {
 		element.click();
 		
 		staff.click();
+		Thread.sleep(2000);
 		addnewstaff.click();
 		name.sendKeys(prop.getProperty("Employeename"));
+		Thread.sleep(2000);
 		mailid.sendKeys(prop.getProperty("Emailid"));
+		Thread.sleep(2000);
 		mobilenumber.sendKeys(prop.getProperty("moblieNumber"));
-		designation.click();
+		Thread.sleep(2000);
+		Utils.actions(driver, designation);
 		textbox.sendKeys(prop.getProperty("staffDesignationTextbox"));
 		textbox.sendKeys(Keys.ENTER);
 		savebutton.click();

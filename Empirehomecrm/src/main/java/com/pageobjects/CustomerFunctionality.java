@@ -86,18 +86,7 @@ public class CustomerFunctionality extends Basetest {
 		delete.click();
 		
 		 alrt.click();
-//		Alert alt= driver.switchTo().alert();
-//		Thread.sleep(2000);
-//		alt.accept();
 		
-		
-		
-		
-	}
+		}
 	
-	
-	
-	
-	
-
-}
+   }

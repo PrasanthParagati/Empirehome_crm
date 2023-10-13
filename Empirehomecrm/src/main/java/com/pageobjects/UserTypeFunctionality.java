@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.base.Basetest;
+import com.utils.Utils;
 
 public class UserTypeFunctionality extends Basetest {
 	
@@ -54,10 +55,8 @@ public class UserTypeFunctionality extends Basetest {
 		
 		Thread.sleep(2000);
 		
-		Actions ac = new Actions(driver);
-		ac.moveToElement(addnew).click().perform();
-		//addnew.click();
-		
+		Utils.actions(driver, addnew);
+				
 		typename.sendKeys(prop.getProperty("TypeName"));
 		typecode.sendKeys(prop.getProperty("TypeCode"));
 		Thread.sleep(2000);
@@ -69,7 +68,8 @@ public class UserTypeFunctionality extends Basetest {
 		
 		Thread.sleep(2000);
 		
-		ac.moveToElement(edit).click().perform();
+		Utils.actions(driver, edit);
+		
 		typename.clear();
 		typename.sendKeys(prop.getProperty("edittypename"));
 		Thread.sleep(2000);
