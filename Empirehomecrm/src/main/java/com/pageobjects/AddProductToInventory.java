@@ -6,12 +6,14 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.base.Basetest;
+import com.utils.Utils;
 
 public class AddProductToInventory extends Basetest {
 
@@ -52,7 +54,7 @@ public class AddProductToInventory extends Basetest {
 	@FindBy (xpath = "//*[@id=\"lobicard-custom-control1\"]/div[2]/form/div[1]/div[17]/div/span/span[1]/span")
 	WebElement mrpfactor;
 			
-	@FindBy (xpath = "//li[contains(text(), '1.00')]")
+	@FindBy (xpath = "//li[contains(text(), '3.00')]")
 	WebElement factorselect;
 	
 	@FindBy (name = "Qty")
@@ -63,6 +65,9 @@ public class AddProductToInventory extends Basetest {
 	
 	@FindBy (xpath = "//button[normalize-space()='Save']")
 	WebElement savebutton;
+	
+	@FindBy (xpath = "//input[@placeholder='Search']")
+	WebElement modelsearch;
 	
 	public AddProductToInventory() {
 		
@@ -108,26 +113,21 @@ public class AddProductToInventory extends Basetest {
 		
 		Thread.sleep(2000);
 		
-		Actions ac = new Actions(driver);
-		ac.moveToElement(imageupload).click().perform();
+		Utils.actions(driver, imageupload);
 		
-		Robot rb = new Robot();
-		rb.delay(3000);
+		Utils.robot(prop.getProperty("imagepath"));
 		
-		StringSelection path = new StringSelection("C:\\Users\\u\\Downloads\\chair.webp");
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(path, null);
-		
-		rb.keyPress(KeyEvent.VK_CONTROL);
-		rb.keyPress(KeyEvent.VK_V);
-		
-		rb.keyRelease(KeyEvent.VK_CONTROL);
-		rb.keyRelease(KeyEvent.VK_V);
-		
-		rb.keyPress(KeyEvent.VK_ENTER);
-		rb.keyRelease(KeyEvent.VK_ENTER);
-	    
-		
-		savebutton.click();
+		Thread.sleep(2000);
+				
+			savebutton.click();
+			
+			Thread.sleep(2000);
+			
+			modelsearch.sendKeys(prop.getProperty("Modelsearch"));
+			modelsearch.sendKeys(Keys.ENTER);
+			
+			
+			
 		
 		
 		

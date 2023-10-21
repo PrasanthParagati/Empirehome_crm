@@ -1,6 +1,9 @@
 package com.testcases;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -37,9 +40,9 @@ public class LogoutTest extends Basetest {
 		
 		logout.verifylogout();
 		
-		String urltest = driver.getCurrentUrl();
-		Assert.assertEquals(urltest, "http://empirehome.myprojectsonline.co.in/");
-	}
+		Assert.assertTrue(driver.findElement(By.xpath("//h4[text()='Login']")).isDisplayed());
+		
+			}
 	
 	@AfterMethod
 	public void teardown() {

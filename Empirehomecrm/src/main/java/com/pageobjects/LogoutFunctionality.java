@@ -14,6 +14,9 @@ public class LogoutFunctionality extends Basetest {
 	@FindBy (xpath = "//a[normalize-space()='Signout']")
 	WebElement signout;
 	
+//	@FindBy (xpath = "//h4[text()='Login']")
+//	String logintext;
+	
 	public LogoutFunctionality() {
 		
 		PageFactory.initElements(driver, this);
