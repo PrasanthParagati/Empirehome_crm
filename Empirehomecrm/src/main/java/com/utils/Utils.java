@@ -11,12 +11,15 @@ import java.io.FileInputStream;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class Utils {
+import com.base.Basetest;
+
+public class Utils extends Basetest {
 
 	public static String[][] Customerdata(String sheetname) throws Throwable {
 
@@ -69,6 +72,12 @@ public class Utils {
 		 
 		rb.keyPress(KeyEvent.VK_ENTER);
 		rb.keyRelease(KeyEvent.VK_ENTER);
+	}
+	
+	public static void scroll() {
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver;	
+		js.executeScript("window.scrollBy(0,800)");
 	}
 		
 

@@ -31,5 +31,13 @@ public class Loginfunctionality extends Basetest {
 	   loginbutton.click();
    }
    
+   public void verifysaleslogin() {
+	   
+	   userid.sendKeys(prop.getProperty("salesusername")); 
+	   pass.sendKeys(prop.getProperty("salespassword"));
+	   loginbutton.click();
+	   
+   }
+   
 	
 }
