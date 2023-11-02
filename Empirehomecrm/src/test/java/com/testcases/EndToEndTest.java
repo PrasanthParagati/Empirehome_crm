@@ -27,7 +27,7 @@ public class EndToEndTest extends Basetest {
 		
 	}
 	
-	@Test
+	@Test (priority = 1)
 	public void salesexecutivevalidation() throws Throwable {
 		lf.verifysaleslogin();
 		eef.customerregister();
@@ -37,7 +37,7 @@ public class EndToEndTest extends Basetest {
 		Assert.assertEquals(urltest, "http://empirehome.myprojectsonline.co.in/");
 	}
 	
-	@Test
+	@Test (priority = 2)
 	public void salesorderdispatchvalidation() throws Throwable {
 		lf.verifylogin();
 		eef.verifysalesorderdispatch();
