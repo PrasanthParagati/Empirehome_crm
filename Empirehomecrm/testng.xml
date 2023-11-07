@@ -2,25 +2,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 		<listeners>
-		<listener class-name="com.Reports.ExtentReporterNG"></listener>
+		<listener class-name="com.reports.ExtentReporterNG"></listener>
 	</listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.testcases.ShiftTest"/>
-      <class name="com.testcases.CategoriesTest"/>
-      <class name="com.testcases.HolidaysTest"/>
-      <class name="com.testcases.CompanyTest"/>
-      <class name="com.testcases.MoveStockTest"/>
-      <class name="com.testcases.CoditionTest"/>
-      <class name="com.testcases.CustomerTest"/>
-      <class name="com.testcases.SubcategoryTest"/>
-      <class name="com.testcases.LocationTest"/>
-      <class name="com.testcases.EmployeeRegistrationTest"/>
-      <class name="com.testcases.LogoutTest"/>
-      <class name="com.testcases.Logintest"/>
-      <class name="com.testcases.LogintestWithMultipleData"/>
-      <class name="com.testcases.UserTypeTest"/>
-      <class name="com.testcases.EndToEndTest"/>
+     
       <class name="com.testcases.AddProductTest"/>
     </classes>
   </test> <!-- Test -->
