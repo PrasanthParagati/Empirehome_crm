@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.base.Basetest;
 import com.utils.Utils;
 
-import dev.failsafe.internal.util.Assert;
+//import dev.failsafe.internal.util.Assert;
 
 public class CategoriesFunctionality extends Basetest {
 	
